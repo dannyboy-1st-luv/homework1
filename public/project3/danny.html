@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<title>Daniel Darku</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('https://lh3.googleusercontent.com/TudfbFJlkwHRMwgdt1YQGafBb0--nWaUW9inp0Z7Q2FeFVxTqfCGSy4lSHxp60sCV9E8bqdbGANC7rBn_B_zJqydLBYtBLoKYNxYaPzDVMIABe-SbdMq9R5vcteqs-9eHBijPXPq5Tq6nkSvMhnddJcP4V1Dxg3ACW7UKXYBENcr8Ng5cy6ayHCLPSnArV7yO-7DZAuHBk04ayfbXPMIpOO5j1c3USji9G_0zfWfmpRM_ZzG1VviWjRk1I3a2MnVOxQCxOdV0G0S8v9z3TOtC4dlMDCamV4i4MEug_ZlwDvEOrkkd4AfI8VFgcVQqk-avm64vnmtb2BuimEgwf33DIoiXecaMl5NTBspLW_jF2A_HIgjLJlUzX_8uNE4pkhxSoA3mP4C-lXhdfJ5WyihiQgmieDl0pGiObCVj0IvL-_54ajGitBkHO2S0PsJHqyT1tWdWUMHIyVycnhf9qxNuyrvyywH3pZUP6bYAuVbYhv54f1cSzQxm3dsxdE7wrz3s-lH-qKINm-NsVK44Ng8xCRcF2atJv_hLB2Q8FGpqO5NGFiKTbe53-6aML7Q_ML1JtMzAAOYtrC5rhqMsIr3H1gBC67dUQCwohSzEXpK_E43EkrlA4WEujbKoLpdx6kso01i1NoHntBmCEwAOvwRrzZ_=w1292-h969-no');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("https://lh3.googleusercontent.com/dL5cOSJVMdbsikaJ-6UD-PMw-a701ZlO897a6jGp9p7MjaAI1Xa7djwUHFP4Cx4qnQS449jJwfWudToco9x3nOH_o29A0vJxVatOfrqf7T_BE8Pst8NYCcvOq75DVaRjVtOPBXkdpUb34mcrmlLnQpxiuaLRBsDdySZpKCi5Q9BUAR9HWjuWasXb9wbw8AMwjayQFlLr_H0I9RMv9okVHuHUhTjBpUsUbCSlOusRasZVCp8j6GUY1e0MpJn_9sGQV42dQnvpCOXQle2Eh24d8J9OOnZmNf-G3W-PW5dU4RIt03qiSPm5KXUUzXuCE1hJBEPQk00tt8rpYdnxmkfzoCBDlk5iAxoLSZq8rPgCUr86omU61WfAEh5CDbbFxvsfuN5oGDJqK-jbHR0DAocRjOXkHXxjGFnrdBg0NySDjiD4YQLBXNbJyOJRs09zLE26F3sz_Srdz_b0SV1HnCSCpRfJsO2BaIi_3YqKZ5sBBOps-2DHwygUDUtlndRYp16OvhAV67hmjBh2b1ukzXavp68l0jui6gehrDG94gEXSi93fZ67lZg8S7L2-KdBvIGT3ODGWss5pzpCy43k4LbLvymAhRCorN0gIckjiso1JvRgo_y2yhKiBFNLVCwydkMGXvPbHrAkdoijh-azYRC3SfiB=w1296-h864-no");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("https://lh3.googleusercontent.com/9uGfhPTpzP0ZEJx2cexEndP0CGezV5k6OjAF6sbPd6UPXVY2mjQuPEqzdcKRPNOW7RsIe5wb8qI7HhZWIqih0B3EuzUtiTYY7eZP6WuMoMAGM0yTby5V5jAnXhmEq58lWdYWokR0fS3g4EWRdvJFDQIj9usVtCNMjDDPZk7slUifjdOQRrChF-11mVENxf-Oov3ldxf2FwcSop4LntEpyboA8uXZBnn8ZhEHtz4qD7c4pGoYrnDkGN-MO9Gl6qgD5MHMaCuXG_quNq657azjMSmO2oayYw-B3oR4mYowfAN7UNteSDpYLJnzMq8MZ1MuboiUbucVKYuEGeAFUczK1slyeWRj0IG6sCABE6Q0peHoB4AB8FYwkIPSWieN5i7N3ENKWKRFp4bOiujj9XpxEDnIr1sjcQNYNF_dDH1ZDUFWLgIy27Xts7XLvXppTP67wTiecAqMMZzYOwdKvNawgjqqdDD5vTYgW6kd1RXapw_0asbOnbH1chi8fX5wcqugHkQLxXlxmP9QmwCOXkyl7c1LClPFLmjM9AHFoSmTEgbTrBybNomtjku1-WXTxeGuRwzbCnXRL48XZsTywce4yqu3kzS1xq9Sk8kHLWqjV3GKOegARv4MAq-_TOTlYFV2JAz5WBdBnGt-DLIyNSOsts93=w1292-h969-no");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> ADVENTURES</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">ADVENTURES</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">STEP <span class="w3-hide-small">INTO MY</span> LIFE</span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center"><em>I love travelling</em></p>
+  <p> Hi! My name is Daniel Darku, and this website is for a project I'm working on. So I'll be sharing a few details about my self - but focusing on travel. At this point in the paragraph since this is just a project and I don't have time to come up with a lot of things to write I'm gonna insert some of my favorite scriptures just to take up some space hehe. Hebrews seven seven, and without dispute the lesser is blessed of the greater. Matthew six thirty three, seek ye first the kingdom of God and His righteousness and all other things will be added on to you. Mark eight thiry six, for what shall it profit a man if he gains the whole world and loses his own soul, or what shall a man give in exchange for his soul. Well, i think this is enough lines to fill the part of the page that needs to be filled. Check out some of my dope travel pictures as you scroll down. Enjoy!</p>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Daniel Darku</b></p><br>
+      <img src="https://lh3.googleusercontent.com/m3mPO7oqyEuqFpRliCyu6Pg_X0lpw2nCs_HuLSxFn6_K4xXodiZ-3S6LbTBymL-DRB0jMyg2TnVBUrpw3J5JnP9gAH1fJT7rORAAMJnJc52c2jWv97IF_9IOaXzn8RdbRIuOlN7O_6fk72UmJ1t2HyCwkWa5RDDSx4wAUjsGIWUOsF2PGIOiZNRlHSUsGc0R-F8CNddD9tpfVNwGU5OSFRzRWnQGLxZ_YEyfGEUivPpeL3ZJqVOVLO5X8kFgYpP1zbXSsxF1HwJMe5xn12lqtAUSvjDtqTpbmAz0D5_HJoX72PWBn4yugvc83Pg1lAguYlxLUZQ2OKOjTckNUukRoSEE4OCl8ugwUvzG2Vxq6qlyNOx-gSS-2GXIR-qD1-eg2tXdyHBRc-V53q5ftSROLSSeUDf0Vj7jbcXSDW1ZTtShzSBWHgE7AEMyQpYpL5O08zPwnArSNQrkP7QcIyxVG15yPCrT7vTffSFXjJEDflQRpn2FYyvw-fWU92XGv0lsEfXO4vRnyBEPZagz-fOEkOo_XoJhLbX4BdmXbF7m8e2aHkT1wx2Ho2oZQj33ud1eMykM9PCrO1sOuvbYalJSfE9zKbkwPpFr-njZg6ESCuRD_a70RC2nJqDQRzW7wJ46ZbmStMYw7l5EW0gnN-i9gIBCqw=w382-h855-no" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="200" height="100">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p>So far I've been to all but two continents; I've grew up in Africa, immigrated to North America, visited South America, traveled through Europe and waiting to visit Asia and Australia. I've put together some of the pictures I took from some of these trips. Most of them are also pieces of art from my perspective. So hope you enjoy them, and feel free to leave behind a comment or two. One of the reason travelling is expensive is because each trip teaches you a lesson. The Bible says wisdom cries out in the street. So each time you travel outside your home city you have numerous opportunities to encounter wisdom! But travelling doesn't always have to be expensive. With ample planning you can travel for little to nothing. There are a lot of great deals on groupon for packaged trips and experiences all around the world. And you don't have to stay in hotels; airbnb is a perfect pick and it's everywhere! And you don't always have to rent a car. Using local transportation helps you to be submerged into the culture and experience life in the city or country you find yourself in. In Central America for instance, there are buses that go all through the region. Finally travel is important, because as believers we're supposed to go into ALL the world and preach the gospel to every creature. How can we succesfully do that if we're not used to travelling, and only used to sitting at home? Anyway, all this blabbering was to help fill the page so I can present this to my teacher hehehe. Above all, I hope you enjoy the pictures. I still have a lot to learn when it comes to programming. So Lord help me! </p>
+    </div>
+  </div>
+  <p class="w3-large w3-center w3-padding-16">Areas visited in each continent:</p>
+  <p class="w3-wide"><i class="fa fa-camera"></i>Africa</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:30%">30%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-laptop"></i>Europe</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:10%">10%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-photo"></i>North America</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:60%">60%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-photo"></i>Asia</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:0%">0%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-photo"></i>Australia</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:0%">0%</div>
+  </div>
+</div>
+
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">ADVENTURES</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+  <h3 class="w3-center">MY TRAVELS</h3>
+  <p class="w3-center"><em>Here are some of my shots.<br> Click on the images to make them bigger</em></p><br>
+
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <img src="https://lh3.googleusercontent.com/S-3CLW9f1s2XBmWuP0B2fm-c0vb50Dus_CNG00KhkEslNbmc6QAuxCCFzi7XY0uGvVbKRtXKKT2Cu5P9M73K9oDpFcNSQF636RxxmBVYWuC_Ph0nBplNXyp8eeBuzcz1NvjSlF3Jq0nDrHhEYkU9WUoXkRaVEfup-ePwRfeGs1kPZ1rvnk8ble05cvnkFRdGq6czIDkuN-ZhMh38bqb8EePlMk1rNYiMzS-j4Q2e59G5RfT7kOfck-GFCzI-j1MBmDs4yYF83JFwFhlQjdzRuTwbUn_xslD2WD6c_jyogVVKs_E9lTAd-2ntQx7VpMKdTIqql9AIKrhkAURtyhTSJ31RVQJSeeyI-A3B60SHbw0D7do75CnQtjjptqdgF5vSVBBB0HQ1OcnJKFfwxF2JqEx6Y_6YTBIibyyXA1_jc19ajGqRSUClnaQAe5XBUbO6hAToBvbAh9n5J2dLot3TdzAbvfP84Is2geZq-EThanYnVq2M8qHjr0CxL-telkfxwkvcSx-yGkNrX5hIsen4JC7FbWN6Yq6F4vhXun98KG7oB5-bOpI3Og0eHHABMjE5xbU6tQui73C_K432ijLQQWDKIr-f9PWsMBX-5jJAJs29AQy52dzA_mWTe5vI6t16LF0gs74y0GUVnYEqOrTRsqpW=w1292-h969-no" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Greens">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://lh3.googleusercontent.com/7mo65coat81cWNSTX5jTXKXWTmF9z1Dk1F7qqzXBa0sfwkShc7BJr2_jDQ8byyw22bjVh5MyrmtMU5gbsE64nDilXMgmKjTxxonL3QO2o-QGIrLMj9dnX2uCU_Q06Tbbkc0pBIIZSTs6n3m-j9J3ocybXy1eURvS7H4TbxQFYQBme7DvC5HEX34dIZD3NJTBwgbW9uD5WXxk0KE7cwQA-Qp5uHbr1eO4xZQbJyd7gLEyEOqcLXZTCLm0KNtQMeOcGeBUPZEyY_u7kkmgD7KSzTS4F_02lSWA2uFv-RNoPUofnCNBoaf6R5ERgvvAvkPNh84siZ5MN1gTZvgklMh7bQAgU5lkza4p3NTA1i6G0u0UA6L2PwWv_VUWgEoNrtHNyERWPjT3x3TavoiatO_NTmzieO_Yfku3UX-k0KDSPEvcsXz_Avz2vx5_yz01mR005FTZLOFVIT34Udwr0VD7z2QDtZOI2v4oqmpCYHECbJqbY2tDjPZ45tJNcPcUz4uKvdF9fRv8aFyDVxdLh81Teo8WKi0rZkre9qLx_rlkNifwc3YjL0o5XFWblnzA3I4g-9Ec487KcLEeqISn7HD0eZzoSNigo5fb9-2gmMcA96GtDxKupaiFOLwMc2Bdgt6Aj348qcS3ewT1nZMCdjnVbfa6=w1292-h969-no" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Beauty">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://lh3.googleusercontent.com/utq6tyIzOMOju-6Ux76cDX0N3VfQmIdDTfxLZaD6IkA1GQgpJMjtO9s3c8lpg13a4bIj04De73ZVaoMGfxETRs3HeEdcDrf29NLXdQ7BREg2B_-6J4qeyV4TDSCi1xaBlWZxxWheco1MBMkYcMJPRs_chGhHT0Tj-9M8aJqdLoVH0P_WaLx0jDl0Y3_OT2VCdl2-Tcf3gl09RZitepck4iVPHx811z3O_cVh8oVnDsCnVSU0tCondL2INRmlDB6FTwjrdLbUDk_0N1WIPHJQ29K1N0apueV5cSlWdz8iCXXdaCN7ASyd6ui3w3Dfc49vCO9BdqCgcESz75a-MKW51bRdtJayjpvfu5el1WEm0D16XuhgjJJKOcbuxY3H5NqwXzIN6JxvfXF3uM53MwmPxGMyTlqJq6SJrIQR6NMUT5LZbcZMtGzY2vbT7WV0EMf7eoH6QzkBTEfiUtCUVLKHY_N8FpGgAA61aCYEZu6wZtQTqfrLneDAQ-D4aGL8mtSOvRkPnT2Nl94zNYaF5Yxa2ff8Wqv3xsKkBX8zpCnf_7e7InxzOuwOpCoHwjlfNzDINjT1gKmATc2accb8M2cwNwEOYU-3uTROiit3xC-pMmFRfu1hslhTrgQtLUuAWmsBqCHjlREKzODMuAiyVPOKZ19E=w1292-h969-no" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quintissence">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://lh3.googleusercontent.com/pteIwAw6qmtglDqdqhlxtjTe8u99Zy_jaLYdIHppDRbX1WRzSIfDPwTQzBXnbtYratuoCSnZL7WBituzoNxDCxdbSU6PXQ1xq7FAhgB2-MC-Ci8BoXmYBhn9CpkYsIjxpFcuXSlmCPlZDhW15hNKH-2z85SY3-6qSWcNA_pmIOzlC4aicV4TyR7NyHbO-Qol07JI_PWaSjyZsknc7zXOogkaJVCNdhULFKfGKSxUeNrK5W-bfwO0pVNpDRZYi7VQMb6Z3RfUIUYChrzWL6QG597j7LporwUGWSurcXjI7dpEHB4qGfAiq6YpctjNqLRxuTHLMXaEx6YGTikzjlf7IaJ1AcycrLVryQIZq97SuXvoDI0pMmePPG3pqZI43PFeXhUH7g6JNUdrxpLG4DBfTnRDF9JLjUWYt1EvKyQnwCtG60EPyrKYJLdvTsU1P_4qy0ELxeIf7ddZ9ws4yWFQbYjS3ayQe63sVyinCUj37gD7iJTMplHXWP2xvVnJMN2_d98snSh1GYb84jD__8fqu6Cs86v8wDA1u-hmHQDcKal_deHK_KCa4M6_1_GThrYmyYaOSZCSdNd-hTG3gBoR6cUSXltAt39U9TOtfCxsEkAyLZa_ZWXwPiuWfQrDhs45D5CqdxY8DNuuT5rwrujXFyQ4=w1292-h969-no" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Solace">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-center w3-section">
+    <div class="w3-col m3">
+      <img src="https://lh3.googleusercontent.com/QTsnzrldbHoEj7ZQMXcEpLMoS20QfPuAPijDFIltGdjgD_h8uMK3h-7v19q_nmXBpjdy-XZaESVuohmEdI1wfWfglaFEmeX9a3FrSgKqScBo56a96Isye_CfCq9Hr0ob7-tPHLTpoDZC7W4t8WX5Hu9zXNw4MDV--b0D2Nuiu_gjCulSEfOnYk-qCP7pJlCUxIIlGXec6hW8ufxRtISymrGVxiBfUV28bbcMjN4mgJlNuZN7a5kAVWXRg27vZi2unSugKbvc_qDO2WS-SaogPUXMRa9s_DhDZj31BfpnVzv_anPHpqT1LGkVWl6gDhyZerYPuVSWBv6CJkVnmgMjotjRdlHVJttTfB6kRayEb06kkeT1PnDmGOCtYcneHbevojmOhwEi2kr04p7a5Hd1JuzppdxJo4PljIFbS-_UdQANScxXb6n8whBlDp98s22Qo4uj21Ff3VJzlhC8kmhKkxtwSzh-qHQVfoIxYVesHURh3tgqXZuiQFuy3LSpniwpCHwj5xkxopM2Jfwc-TlsSKn0sJ22rI01_Ipz5KLOTNklyzXAFMjQ_AemwUXMODkIcTyfoRm_3YlIv8Zsfu-5mckXsjJPRIvIvpPuNXXBJLCzqz2SYBszh-J0-s4N9yn5YwPLnXhM0Cl4L_Y3oFTQ6A_e=w1292-h969-no" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Diaspora">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://lh3.googleusercontent.com/o6aqigbotcWH_Giu2mpX19e0Ka-KcUPcecu78U1tAZpiWkW4ahwHY4SRcimE-FnubsvLZtfqXIFCPxpnev-F3zoAkJvsOg6e_Z9PA1jfrM3StJXKbHiNkg4aI-3Giz-5yFy_bNLxcLkVqNMqfNob1Z1-7HwtPicRlj-wM57bIheEh9DxV7W7-MTolR8lcNoyN68C61wFr8lTf0aIkn6h_BUt6xxzetOn9xMw-5PU-fmasl7dZ-KZpPTotZO5HrUIVCTOaG4wpZDtTyQdm3YysB83StKgWaksi_fJtDcv8zlo0y4P8hakXEjFLtuKpYuPhsPh1HI7vmdBQ5XUhPWZK39oQYwoyumkDuVsMJAvk_xRS-PVzZtsd4OojsxNfP5vVoa9NeoKl6p3WSE964S-8ybfqLIll_-bA2o1i631GJnil9XnLWFuvfWOD_qu2vZzRQn-biFnKdfDFxvHht_6wIx_VTHejP_jiwejEoU4CeEGlmrLxJmF-IRZ21HeWQDRa-FvtoA_iLo85iNZS7Q4BsyI8xK_WInDkA53v7Q8pZgHILr1rqPkUMsvFFGQnoYA1Q493XVW2gOL8PYmsfveE86CqqDyMjAF6lN6XExzKjgKt47gup0nWXC8ZuY_VcdmYaZHSccjEZlSgnHJPNgwpPmJ=w1292-h969-no" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Essence">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://lh3.googleusercontent.com/Q7hCygobejI0C4ZY57vTklqI0_39lBn7b2rC2RH-lUASKz9hjvGo15wyOb51semL8lZkX7yAL3EHK8trsSGhH2MEeqi6sbLPB5jH0dkAZAyfR8BNNfidh866jUTsjNdTPKEY0W2n0-pXlQ_Wgy5hXVLBBmreVCyWYFsrb-zwapm8VR50O0fAgk4i2KPWdp_RY_sKaMFwDUHQNBNwCBR-h3b8MKhC4m1WhjWbmpq78OEoZeEavbpMh3UmG9mnEXufzowWQjJAikljn2IiMuE2TgdIJ6cJZnzrQQLxiSpzzJHbq4vOy7MpaP8cc8IqAQxfEe0sI-doGMwllHoDZMAy44XSm6CP3cuCmPOB1CaSMs-i4T-A4gDpUMJQD77SxN7HAnf8WNFtU-FqiBEXfYZUDSC53K6QQzq9hJ5eniAfr8WpwCScRelGUNOw6e4RBwwQGUgifBCXW0IWj27S73hYXz1cruAwTY3-f-OdPe04gbJUQxY9lbxfcHiYhrdhtlJijK_j3Z60q5fj_ji-7eXIcBZPjk6IqmlCSh2jU_p9XXktOv085qlkbxgo4fYbEO27ygAvowiE3UcW0KYiY2nz_T7-esp9WyVxCEUNWjfppDvi9owxcP8lGB-pK87o-Z87ALecSysdd0KkfDxtqZkHpq6J=w1292-h969-no" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Nostalgia">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://lh3.googleusercontent.com/uX5Oph-2Pu2DJypb8xMvm3MYFWwTHVE8vjY87qbIDgELurgUd_-j-6JZIuaAGj0yyOssX_zYUQXVyT2UQbzbrUctmZZB2SNmNnOa_dRqZQlrjkVPr5jjiW1se1fva52Xq16wWw7jVsLnFqPMnr3zQvo8PM1V-pC8ej1scvdAsXMz-TesGXPeaxC5SHHNMpEnOWvFfgiFA8u4YAeTw3GxlgNmc7QGpES1QjUZOmkOz2ssXK9bLxaYyF0JrMlzFjHscLV1f7akvakZaF2hU8dAnxTp8tgPfLbsfnjozZclfBGzo9NN2mSQy1gx3w1Y7jayw9KPUQRMmXmfsgTsrdK65cozoTba6RKk_-wt7YyhGSrqjrFmC1Ks2R1EYHUMqup6n4IdU7keUf0zg-u1M1eprgENYEM6g8ZfrgY6b4Vrcd38CnHcJ5g5BgOg2CSGRBl36FnHd50kqf-aZilstkGpyFzMjRMz1MLXxndT9rkF-t_S3cA55PTFkYSCMagIkZxjymzF7lwR9IHxObF7S191bcxnzty8vHjnAIcHkMKBM2ARoReaSz98rvyVZlCKlKAKlG7VC1h62rGcUJ4KZ8GGIGCo03pOVWjiLEBC1BKYdhkKgjHn2q1d7f0a12vhR7eb3uvLSpjErIpvvDD2tyB6HLEW=w727-h969-no" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Emotion">
+    </div>
+       <div class="w3-col m3">
+      <img src="https://lh3.googleusercontent.com/tQ6x_yMiOYLf8ugB-36m4FcKnglJ2Yt2o9fPuGbktFgqZNndIGcDIE-frNHyr9z3zJ4QNLkuL2hI5GBRI0fgM3nx_wJ1WWysFxoHjhHVNHUgz7bbYpBzDTdimeTm4FgzbHVOQBBImje6X3HEQqQ0WEh4X8FXvBXFXj_1il5D2ZTWDp-tZdyTSJxtuh00tYjXJL5JCGUnJ5M3H9BUXl_eNwSsS1XwFqK4_0JD3VEb4OjandO1OupYDx30BTTf7ObUsUupy4VuswfWb6Ms0x0bkKH1Z7ZTaSUtbpfmA6bUs4II89FjqbnvEDaFQBbYkQT1dMhmPfqd0xRz6YAHXRKg7xxW5ABzvPEoPDpI3TCgSeOWIGvqhblGSN-1-MFmblBlpNF09MSgwOkwBBk4TWhrsxExLejTotHJ6TCD74BXs02yVEC_yQ1_9eJ8pN_CnAwEJW5JGFBEQlrdrIFpgipepi8tGvf-JkpuC-KKQDPVG0caxnJ-8ooWfRWlQugNsalnsJ6Jf1oLIJDwA-0-5_G8bKXi6JAnkI0pEPPCf5xmC_OuJlrKk9tU7kY1i4IqYOdbw590E94K54SvAqS6KO_SHqre5XI0uvdv_GqE96-pULhG6-UxzcRN32qwSJI2Qd8u4postUtXyb1bEe78shpIhhGJYg=w727-h969-no" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Connection">
+    </div>
+    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <h3 class="w3-center">WHERE I WORK</h3>
+  <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+  <div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m4 w3-container">
+      <img src="https://www.clarkconstruction.com/sites/default/files/styles/project_photos/public/project_photos/GM%20VEC_Carousel.jpg?itok=cW0MMVF1" class="w3-image w3-round" style="width:100%">
+    </div>
+    <div class="w3-col m8 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Warren, US<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: 2484109882<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: dannydarku@gmail.com<br>
+      </div>
+      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+        <button class="w3-button w3-black w3-right w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>

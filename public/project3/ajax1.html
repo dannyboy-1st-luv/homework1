@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello jQuery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="hello.js"></script>
+      
+      <script>
+      
+        $(document).ready(function() {
+          $("#submit").click(function(){
+            $('.greeting-id').html("The ID is ");
+            $('.greeting-content').html("The content is ");
+            
+    $.ajax({
+        url: "http://rest-service.guides.spring.io/greeting"
+    }).then(function(data) {
+       $('.greeting-id').append(data.id);
+       $('.greeting-content').append(data.content);
+    });
+});
+        });
+          
+      
+      </script>
+      
+    </head>
+
+    <body>
+        <div>
+            <p class="greeting-id">The ID is </p>
+            <p class="greeting-content">The content is </p>
+        </div>
+      
+       <div>
+    <input type="submit" id="submit" value="Submit" />
+  </div>
+      
+    </body>
+</html>

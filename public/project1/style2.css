@@ -13,6 +13,14 @@ Table of contents
 body{
 	background-color: #D3C7B1;
 	font-family: Times New Roman;
+  background-image: url("https://images.dwell.com/photos/6328431439726800896/6445880622670512128/large.jpg");
+}
+
+img{
+  border: 5px solid red;
+  padding: 0px !important;
+  width: 50%;
+  margin-right: 20px;
 }
 
 #wrapper{
@@ -22,7 +30,7 @@ body{
 }
 
 #header{
-	background-color: #80ced6;
+	background-color: rgb(255, 28, 36);
 	margin: 0;
 	padding: 1em;
 	color: #fff;
@@ -36,14 +44,14 @@ body{
 }
 
 #sidebar{
-	background-color: #80ced6;
+	background-color: #d680a9;
 	padding: 1em;
 	width: 13em;
 	float: right;
 }
 
 #footer{
-	background-color: #80ced6;
+	background-color: #8dd680;
 	margin: 0;
 	padding: 1em;
 	color: #fff;

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    
+  <script>
+  $(document).ready(function() {
+ 
+  $('#first_form').submit(function(e) {
+    e.preventDefault();
+    var job_description = $('#job_description').val();
+    var city_name = $('#city_name').val();
+    
+
+ 
+    $(".error").remove();
+ 
+    if (city_name.length < 1) {
+      $('#city_name').after('<span class="error">This field is required</span>');
+    }
+    
+     if (job_description.length < 1) {
+      $('#job_description').after('<span class="error">This field is required</span>');
+    }
+   /* if (university_name.length < 1) {
+      $('#university_name').after('<span class="error">This field is required</span>');
+    } */
+    
+    /* sample json representation for university search per country */
+    /* var jobAPI ="http://universities.hipolabs.com/search?country="+ country_name ; */
+    
+    var jobAPI ="https://jobs.github.com/positions.json?description="+city_name;
+    
+					
+					if (job_description.length > 0) {
+						jobAPI = jobAPI + "&title="+job_description;
+					}
+ 
+    $.getJSON (jobAPI).done(function(data){
+			
+			count_data = "Showing <span style='color:green;'>" + data.length + "</span> jobs in " + city_name
+		$('#total_cnt').html(count_data)	     
+	table_data = "<table class='table table-bordered table-striped table-hover'><tr><th>Job Title</th><th>Link to apply</th></tr>"    
+
+			for (var i = 0; i < data.length; i++) {
+    console.log(data[i].url);	
+    table_data = table_data + "<tr><td>"+data[i].title+"</td><td><a href='"+data[i].url+"' target='_blank'>"+data[i].url+"</a></td></tr>"
+}
+				table_data = table_data + "</table>"
+		$('#resultsTable').html(table_data)	
+      
+});
+
+   
+  });
+ 
+});
+
+
+
+    </script>  
+    
+ <style>
+
+
+ 
+form div {
+  margin-bottom: 10px;
+}
+ 
+.error {
+  color: red;
+  margin-left: 5px;
+}
+ 
+label.error {
+  display: inline;
+}
+
+</style>   
+    
+    
+  </head>
+  
+   <body>
+    <div class="container">
+      <div class = "row">
+        <div class ="col-lg-12">
+  
+    <h2>Software Developer Job Search:</h2>
+  
+  <form id="first_form" method="post" action="">
+  <div class="form-group">
+  <div>
+    <label for="job_description">Job Description:</label> <br>
+    <input type="text" id="job_description" class="form-control" name="job_description"></input>
+  </div>
+  </div>
+          
+          <div class="form-group">
+  <div>
+    <label for="city_name">City:</label> <br>
+    <input type="text" id="city_name" class="form-control" name="city_name"></input>
+  </div>
+  </div>
+
+  
+  <div>
+    <input type="submit" class="btn btn-warning" value="Submit" />
+  </div>
+</form>
+      
+      <div>
+        
+        <div id="total_cnt"></div>
+        
+        <div class="row">
+          <div class ="col-lg-12" id="resultsTable">
+            
+          </div>
+        </div>
+        
+      </div>
+     
+  </body>
+  
+</html>

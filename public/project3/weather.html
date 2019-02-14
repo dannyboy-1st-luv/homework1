@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          
+        <script>
+            $(document).ready(function() {
+
+                $('#submit').click(function(e) {
+                    e.preventDefault();
+                    var zip = $('#zip').val();
+
+                    $(".error").remove();
+
+                    if (zip.length < 1) {
+                        $('#zip').after('<span class="error">This field is required</span>');
+                        return
+                    }
+                    
+                    
+          var zipAPI ="http://api.wunderground.com/api/c6dc8e785d943109/geolookup/q/"+zip+".json?";
+ 
+    $.getJSON (zipAPI).done(function(data){
+    
+     //console.log(data.location.zip); 
+            $('#country').html(data.location.country)
+            $('#city').html(data.location.city)
+            $('#state').html(data.location.state)
+            $('#timezone').html(data.location.tz_short)
+          
+
+      
+});
+
+                    
+                    
+                    
+                    
+                    
+                });
+
+            });
+            
+        </script>
+        <style>
+            
+                form label {
+                    display: inline-block;
+                    width: 200px;
+                }
+
+                form div {
+                    margin-bottom: 10px;
+                }
+
+                .error {
+                    color: red;
+                    margin-left: 5px;
+                }
+
+                label.error {
+                    display: inline;
+                }
+                
+        </style>
+
+    </head>
+    
+    <body>
+        <div class="container">
+                <div class='row'>
+                    <div class='col-lg-12'>
+                            <h2>Search For Location information:</h2>
+                            <form id="first_form" method="post" action="">
+                                <div class="form-group">
+                                    <label for="country">Zip Code:</label>
+                                    <input type="text" class="form-control" id="zip" name="zip"></input>
+                                </div>
+                                <div>
+                                    <input type="submit" id="submit" class="btn btn-danger" value="Search" />
+                                </div>
+                            </form>
+                    <table class='table table-bordered table-striped table-hover' style="width:300px;">
+                        <tr><th>Country</th><th id="country"></th></tr>
+                        <tr><td>City<td id="city"></td></tr>
+                        <tr><td>State<td id="state"></td></tr>
+                        <tr><td>Timezone<td id="timezone"></td></tr>
+                       
+
+                    </table>
+                            
+                    </div>
+                
+        
+            </div>
+        <div class='row'>
+            <h2 id="total_cnt"></h2>
+            <div class='col-lg-12' id="resultsTable">
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    
+    
+        </div>  
+
+    </body>
+    
+</html>

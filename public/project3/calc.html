@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- Compiled Javascript link -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    
+    <style>
+     
+    /* style calculator */ 
+     
+      #calculator{
+            width: 170px;
+            background-color: yellow;
+            padding: 20px;
+            border-radius: 10px; 
+      }
+      
+      /* style output on screen */
+      
+      #result {
+            width: 155px;
+            height: 35px;
+            background-color: #cddecc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: right;
+            line-height: 34px;
+            font-family: digital;
+            padding: 0px 5px 0px 5px;
+            font-size: 25px;
+            overflow: hidden;
+            box-shadow: inset 0 0px 3px;
+        }
+      
+      /* style for keys class to design key pads */
+      
+      .key {
+            width: 35px;
+            background-color: grey;
+            color: white;
+            display: inline-block;
+            margin: 3px 0px 8px 3px;
+            vertical-align: bottom;
+            text-align: center;
+            padding: 5px 0px 5px 0px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 3px 0 #a1a1a1, 0 2px 5px rgba(0, 0, 0, .75);
+        }
+      
+      /* style for special keys on calc */
+      
+      .equal-key {
+            width: 120px;
+            background-color: #4a9840;
+            color: white;
+        }
+       
+        .clear-key {
+            background-color: red;
+            color: white;
+        }
+       
+        .key:active {
+            background-color: #a1a1a1;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+      
+    </style>
+    
+    <script>
+    $(document).ready(function(){
+      /*on loading calculator set initial output to '0' */
+          var displayValue = '0';   
+          $('#result').text(displayValue);
+      
+      /* if you click 'C' dislplay output as '0' */
+      
+        $('.key').each(function(index, key){       
+        $(this).click(function(e){
+            if(displayValue == '0') displayValue = '';
+            if($(this).text() == 'C')
+            {
+                displayValue = '0';
+                $('#result').text(displayValue);
+            }
+            else if($(this).text() == '=')
+            {
+              
+              /* error proof */
+              
+                try
+                {
+                    displayValue = eval(displayValue);
+                    $('#result').text(displayValue);
+                    displayValue = '0';
+                }
+                catch (e)
+                {
+                    displayValue = '0';
+                    $('#result').text('ERROR');
+                }               
+            }
+            else
+            {
+                displayValue += $(this).text();
+                $('#result').text(displayValue);
+            }
+            e.preventDefault()
+        })
+    })})
+    
+    </script>
+    
+    
+  </head>
+  
+  <body>
+    
+   <div id="calculator">
+     <div id="result"></div>
+      <span class="key">7</span>
+      <span class="key">8</span>
+      <span class="key">9</span>
+      <span class="key clear-key">C</span>
+      <span class="key">4</span>
+      <span class="key">5</span>
+      <span class="key">6</span>
+      <span class="key">/</span>
+      <span class="key">3</span>
+      <span class="key">2</span>
+      <span class="key">1</span>
+      <span class="key">*</span>
+      <span class="key">0</span>
+      <span class="key">00</span>
+      <span class="key">.</span>
+      <span class="key">+</span>  
+      <span class="key equal-key">=</span>
+      <span class="key">-</span>     
+    </div> 
+    
+  </body>
+  
+  
+  
+  </html>
