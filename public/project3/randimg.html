@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <head>
+      
+    <script>
+
+         $(document).ready(function() {
+  
+    table_data = "";
+       $.getJSON ("https://random.dog/woof.json").done(function(data){
+         $('#dog').attr("src",data.url)
+       });
+           
+       $.getJSON ("https://aws.random.cat/meow").done(function(data){
+         $('#cat').attr("src",data.file)
+       });   
+           
+       $.getJSON("https://randomfox.ca/floof/").done(function(data){
+         $('#fox').attr("src",data.image)
+       });     
+           
+       $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=").done(function(data){
+         $('#quote').append(data.content) // + "<p>— " + data.title + "</p>")
+       });
+            
+         });
+      
+      // use this in addition to the array
+      //var myRandom = Math.floor(Math.random()*myimg.length); https://aws.random.cat/meow  https://randomfox.ca/floof/
+        
+            //alert($('#myimg').attr('src'));
+      //      $('#myimg').html(myimg[myRandom]);//
+
+    </script>
+      
+       <style>
+
+
+ 
+form div {
+  margin-bottom: 10px;
+}
+ 
+.error {
+  color: red;
+  margin-left: 5px;
+}
+ 
+label.error {
+  display: inline;
+}
+
+    </style>   
+      
+    </head>
+    
+    
+    <body>
+     <div class="container">
+        
+        <div class="row">
+          <div class ="col-lg-12" id="resultsTable">  
+            <table class='table table-bordered table-striped table-hover'>
+        
+     <tr><th>Animal</th><th>Image</th></tr>
+     
+     <tr><td style="color:red;">Dog</td><td><img id="dog" src="#" style="width:300px"</td></tr>
+     <tr><td style="color:blue;">Cat</td><td><img id="cat" src="#" style="width:300px"</td></tr>
+     <tr><td style="color:green;">Fox</td><td><img id="fox" src="#" style="width:300px"</td></tr>
+        
+      </table>
+     </div>
+   </div>  
+       
+   <p id="quote"> <a href="quote"> test</a></p>
+   
+       </body>
+    
+    
+</html>
+    

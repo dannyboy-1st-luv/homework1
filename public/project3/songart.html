@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    
+  <script>
+  $(document).ready(function() {
+ 
+  $('#first_form').submit(function(e) {
+    e.preventDefault();
+    var search_pattern = $('#search').val();
+ 
+    $(".error").remove();
+ 
+     if (search_pattern.length < 1) {
+      $('#search').after('<span class="error">This field is required</span>');
+    }
+    
+    var songAPI ="https://www.songsterr.com/a/ra/songs.json?pattern="+search_pattern;
+ 
+		            $.ajax({
+                           url: songAPI
+            }).then(function(data) {
+		count_data = "Showing <span style='color:green;'>" + data.length + "</span> songs";
+		$('#total_cnt').html(count_data)	     
+		table_data = "<table class='table table-bordered table-striped table-hover'><tr><th>Song</th><th>Artist</th></tr>"    
+
+		for (var i = 0; i < data.length; i++) {
+		  table_data = table_data + "<tr><td><a href='http://www.songsterr.com/a/wa/song?id="+data[i].id+"'  target='_blank'>"+data[i].title+"</a></td><td><a href='http://www.songsterr.com/a/wa/artist?id="+data[i].artist.id+"' target='_blank'>"+data[i].artist.name+"</a></td></tr>"
+		}
+		table_data = table_data + "</table>"
+	        $('#resultsTable').html(table_data)	
+            });
+
+   
+  });
+ 
+});
+
+
+
+    </script>  
+    
+ <style>
+
+
+ 
+form div {
+  margin-bottom: 10px;
+}
+ 
+.error {
+  color: red;
+  margin-left: 5px;
+}
+ 
+label.error {
+  display: inline;
+}
+
+</style>   
+    
+    
+  </head>
+  
+   <body>
+    <div class="container">
+      <div class = "row">
+        <div class ="col-lg-12">
+  
+    <h2>Search for Songs/Artists:</h2>
+  
+  <form id="first_form" method="post" action="">
+  <div class="form-group">
+  <div>
+    <label for="search">Song Search:</label> <br>
+    <input type="text" id="search" class="form-control" name="search"></input>
+  </div>
+  </div>
+
+  
+  <div>
+    <input type="submit" class="btn btn-warning" value="Submit" />
+  </div>
+</form>
+      
+      <div>
+        
+        <div id="total_cnt"></div>
+        
+        <div class="row">
+          <div class ="col-lg-12" id="resultsTable">
+            
+          </div>
+        </div>
+        
+      </div>
+     
+  </body>
+  
+</html>

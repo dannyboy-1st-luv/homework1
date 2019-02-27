@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          
+        <script>
+            $(document).ready(function() {
+
+                $('#submit').click(function(e) {
+                    e.preventDefault();
+                    var exch = $('#exch').val();
+
+                    $(".error").remove();
+
+                    if (exch.length < 1) {
+                        $('#exch').after('<span class="error">This field is required</span>');
+                        return
+                    }
+                  
+       //define variable asribed to API             
+                    
+          var exchAPI ="https://api.exchangeratesapi.io/latest?base=USD" ;
+ 
+    $.getJSON (exchAPI).done(function(data){
+      
+      //highlight parameters to be called out per API site
+    
+     //console.log(data.base); 
+            $('#CAD').html(data.rates.CAD)
+            $('#CHF').html(data.rates.CHF)
+            $('#GBP').html(data.rates.GBP)
+            $('#SEK').html(data.rates.SEK)
+            $('#USD').html(data.rates.USD)
+
+      
+});
+
+                    
+                    
+                    
+                    
+                    
+                });
+
+            });
+            
+        </script>
+        <style>
+            
+                form label {
+                    display: inline-block;
+                    width: 200px;
+                }
+
+                form div {
+                    margin-bottom: 10px;
+                }
+
+                .error {
+                    color: red;
+                    margin-left: 5px;
+                }
+
+                label.error {
+                    display: inline;
+                }
+                
+        </style>
+
+    </head>
+    
+    <body>
+        <div class="container">
+                <div class='row'>
+                    <div class='col-lg-12'>
+                            <h2>Currency Exchange:</h2>
+                            <form id="first_form" method="post" action="">
+                                <div class="form-group">
+                                    <label for="country">Amount (USD):</label>
+                                    <input type="text" class="form-control" id="exch" name="exch"></input>
+                                </div>
+                                <div>
+                                    <input type="submit" id="submit" class="btn btn-danger" value="Search" />
+                                </div>
+                            </form>
+                    <table class='table table-bordered table-striped table-hover' style="width:300px;">
+                        <tr><th>CAD</th><th id="CAD"></th></tr>
+                        <tr><td>CHF</td><td id="CHF"></td></tr>
+                        <tr><td>GBP</td><td id="GBP"></td></tr>
+                        <tr><td>SEK</td><td id="SEK"></td></tr>
+                        <tr><td>USD</td><td id="USD"></td></tr>
+
+                    </table>
+                            
+                    </div>
+                
+        
+            </div>
+        <div class='row'>
+            <h2 id="total_cnt"></h2>
+            <div class='col-lg-12' id="resultsTable">
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    
+    
+        </div>  
+
+    </body>
+    
+</html>
